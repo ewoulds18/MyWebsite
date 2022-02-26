@@ -50,32 +50,6 @@ canvas.addEventListener(
         let x = event.clientX - c.left;
         let y = event.clientY - c.top;
         createPoint(x,y);
-        for (let i = 0; i < points.length; i += 1) {
-           for (let j = 0; j < points.length; j += 1) {
-               if (100 > points[i].getDistance(points[j].x, points[j].y)) {
-
-                   if(points[i] != points[j]){
-                       ctx.strokeStyle = "white";
-                       ctx.lineWidth = 1;
-
-                       ctx.beginPath();
-                       ctx.moveTo(points[i].x, points[i].y);
-                       ctx.lineTo(points[j].x, points[j].y);
-                       ctx.stroke();
-                       console.log(
-                           "Drawing line from " +
-                               points[i].x +
-                               " " +
-                               points[i].y +
-                               " to " +
-                               points[j].x +
-                               " " +
-                               points[j].y
-                       );
-                   }
-               }
-           }
-        }
     },
     false
 );
@@ -89,7 +63,7 @@ class Point {
     drawPoint() {
         ctx.beginPath();
         ctx.fillStyle = "white";
-        ctx.arc(this.x, this.y, 10, 0, 2 * Math.PI);
+        ctx.arc(this.x, this.y, 5, 0, 2 * Math.PI);
         ctx.fill();
     }
     getDistance(x2, y2){
@@ -110,8 +84,8 @@ function createPoint(x,y){
 
 while(points.length < 10){
     const point = new Point(
-        random(0, width),
-        random(0 , height)
+        random(width/2, width),
+        random(height/2, height)
     );
     points.push(point);
 }
@@ -121,6 +95,31 @@ function loop() {
     ctx.fillRect(0, 0, width, height);
     for (const point of points) {
         point.drawPoint();
+        for (let i = 0; i < points.length; i += 1) {
+            for (let j = 0; j < points.length; j += 1) {
+                if (100 > points[i].getDistance(points[j].x, points[j].y)) {
+                    if (points[i] != points[j]) {
+                        ctx.strokeStyle = "white";
+                        ctx.lineWidth = 1;
+
+                        ctx.beginPath();
+                        ctx.moveTo(points[i].x, points[i].y);
+                        ctx.lineTo(points[j].x, points[j].y);
+                        ctx.stroke();
+                        console.log(
+                            "Drawing line from " +
+                                points[i].x +
+                                " " +
+                                points[i].y +
+                                " to " +
+                                points[j].x +
+                                " " +
+                                points[j].y
+                        );
+                    }
+                }
+            }
+        }
     }
 
     requestAnimationFrame(loop);

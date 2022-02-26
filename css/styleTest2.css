@@ -26,19 +26,23 @@ section #text{
     position: absolute;
     left: 25px;
     color: #fff;
-    font-size: 4vw;
+    font-size: 5vw;
     text-align: left;
-    letter-spacing: 2px;
     line-height: 1em;
     font-family: 'Poppins', sans-serif;
     transform: translateY(-75%);
 }
 
-section #text span:hover{
+section #text:hover{
     color: #ed1c24;
 }
 
-
+section #text span{
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
 
 #btn{
     text-decoration: none;
@@ -50,12 +54,7 @@ section #text span:hover{
     font-weight: 500;
     letter-spacing: 2px;
     border-radius: 40px;
-    transform: translateY(100px);
-}
-
-#btn:hover{
-    background: #fff;
-    color: #666666 ;
+    transform: translateY(50px);
 }
 
 .sec{
@@ -78,3 +77,66 @@ section #text span:hover{
     font-size: 1em;
     color: #ed1c24;
 }
+
+/* 
+Code incase I include a header again
+#header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header .logo{
+    color: #094b65;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #094b65;
+    border-radius: 20px;
+}
+
+#header ul li a:hover , 
+#header ul li a.active{
+    background: #094b65;
+    color: #fff;
+} 
+
+.sec{
+    position: relative;
+    padding: 10px;
+    background: #094b65;
+}
+
+.sec ul{
+    font-size: 3.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec ul li{
+    font-size: 1em;
+    color: #fff;
+}
+*/
+
+
