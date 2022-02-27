@@ -21,6 +21,14 @@ section{
     justify-content: center;
     align-items: center;
 }
+section #background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#525252, #000000);
+}
 
 section #text{
     position: absolute;

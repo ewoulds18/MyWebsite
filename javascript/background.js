@@ -1,128 +1,149 @@
 // set up canvas
 
-const canvas = document.querySelector("canvas");
+const canvas = document.getElementById("background");
 const ctx = canvas.getContext("2d");
 
-const width = (canvas.width = window.innerWidth);
-const height = (canvas.height = window.innerHeight);
+ctx.canvas.width = window.innerHeight;
+ctx.canvas.height = window.innerHeight;
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
-const points = [];
+let particles;
 
-let isMouseHover = false;
+let mouse = {
+    x: null,
+    y: null,
+    radius: (canvas.height / 100) * (canvas.width / 100)
+};
 
-// function to generate random number
-
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// function to generate random RGB color value
-
-function randomRGB() {
-    return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
-}
-
-//check if mouse is over the canvas
-canvas.addEventListener(
-    "mouseleave",
-    function (event) {
-        isMouseHover = false;
-        event.target.textContent = "mouse out";
-    },
-    false
-);
-
-canvas.addEventListener(
-    "mouseover",
-    function (event) {
-        isMouseHover = true;
-        event.target.textContent = "mouse in";
-    },
-    false
-);
-
-//check for mouse click
-
-canvas.addEventListener(
-    "click",
+window.addEventListener('mousemove',
     function(event){
-        let c = event.target.getBoundingClientRect();
-        let x = event.clientX - c.left;
-        let y = event.clientY - c.top;
-        createPoint(x,y);
-    },
-    false
+        mouse.x = event.x;
+        mouse.y = event.y;
+    }
 );
 
-class Point {
-    constructor(x, y) {
+class Particle {
+    constructor(x, y, dirX, dirY, size, color) {
         this.x = x;
         this.y = y;
+        this.dirX = dirX;
+        this.dirY = dirY;
+        this.size = size;
+        this.color = color;
     }
 
-    drawPoint() {
+    drawParticle() {
         ctx.beginPath();
-        ctx.fillStyle = "white";
-        ctx.arc(this.x, this.y, 5, 0, 2 * Math.PI);
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI, false);
+        ctx.fillStyle = '#666666';
         ctx.fill();
     }
-    getDistance(x2, y2){
-        const x12 = this.x - x2;
-        const y12 = this.y - y2;
-        const xSquare = Math.pow(x12, 2);
-        const ySquare = Math.pow(y12, 2);
-        return Math.sqrt(xSquare + ySquare);
+
+    update(){
+        //check if particle is outside of canvas and change direction to come back
+        if(this.x > canvas.width || this.x < 0){
+            this.dirX = -this.dirX;
+        }
+        if (this.y > canvas.height || this.y < 0) {
+            this.dirY = -this.dirY;
+        }
+
+        //check for collision with mouse and particle
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx*dx + dy*dy);
+
+        if(distance < mouse.radius + this.size){
+            if(mouse.x < this.x && this.x < canvas.width - this.size *10){
+                this.x += 10;
+            }
+            if(mouse.x > this.x && this.x > this.size * 10) {
+                this.x -= 10;
+            }
+            if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                this.y += 10;
+            }
+            if (mouse.y > this.y && this.y > this.size * 10) {
+                this.y -= 10;
+            }
+        }
+        //move particle
+        this.x += this.dirX;
+        this.y += this.dirY;
+        //draw particle
+        this.drawParticle();
     }
 }
 
-//create point
-function createPoint(x,y){
-    const point = new Point(x, y);
-    point.drawPoint();
-    points.push(point);
+//create an array of particles
+function init(){
+    particles = [];
+    let numOfParticles = (canvas.height * canvas.width) / 9000;
+    for(let i = 0; i < numOfParticles * 2.5; i++){
+        let size = (Math.random() * 5) + 1;
+        let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size *2);
+        let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size *2);
+        let dirX = (Math.random() * 5) - 2.5;
+        let dirY = (Math.random() * 5) - 2.5;
+        let color = '#666666';
+
+        particles.push(new Particle(x, y, dirX, dirY, size, color));
+     }
 }
 
-while(points.length < 10){
-    const point = new Point(
-        random(width/2, width),
-        random(height/2, height)
-    );
-    points.push(point);
-}
+//connect particles with lines if close enough
+function connect() {
+    let opacity = 1;
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i; j < particles.length; j++) {
+            let distance =
+                ((particles[i].x - particles[j].x) *
+                    (particles[i].x - particles[j].x)) +
+                ((particles[i].y - particles[j].y) *
+                    (particles[i].y - particles[j].y));
 
-function loop() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-    ctx.fillRect(0, 0, width, height);
-    for (const point of points) {
-        point.drawPoint();
-        for (let i = 0; i < points.length; i += 1) {
-            for (let j = 0; j < points.length; j += 1) {
-                if (100 > points[i].getDistance(points[j].x, points[j].y)) {
-                    if (points[i] != points[j]) {
-                        ctx.strokeStyle = "white";
-                        ctx.lineWidth = 1;
-
-                        ctx.beginPath();
-                        ctx.moveTo(points[i].x, points[i].y);
-                        ctx.lineTo(points[j].x, points[j].y);
-                        ctx.stroke();
-                        console.log(
-                            "Drawing line from " +
-                                points[i].x +
-                                " " +
-                                points[i].y +
-                                " to " +
-                                points[j].x +
-                                " " +
-                                points[j].y
-                        );
-                    }
-                }
+            if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                opacity = 1 - (distance/10000);
+                ctx.strokeStyle = 'rgba(102,102,102,' + opacity + '\)' ;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.stroke();
             }
         }
     }
-
-    requestAnimationFrame(loop);
 }
 
-loop();
+//animation loop
+function animate(){
+    requestAnimationFrame(animate);
+    //clear old canvas
+    ctx.clearRect(0,0, innerWidth, innerHeight);
+
+    for(let i = 0; i < particles.length; i++){
+        particles[i].update();
+    }
+    connect();
+}
+
+window.addEventListener('resize',
+    function(){
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+        mouse.radius = (canvas.height / 100) * (canvas.width / 100);
+        init();
+    }
+)
+
+window.addEventListener('mouseout',
+    function(){
+        mouse.x = undefined;
+        mouse.y = undefined;
+    }
+)
+
+init();
+animate();
+
