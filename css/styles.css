@@ -13,6 +13,48 @@ body{
     min-height: 100vh;
 }
 
+#header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+#header ul li a:hover , 
+#header ul li a.active{
+    background: #e4e011;
+    color: #666666;
+}
+
 section{
     position: relative;
     width: 100%;
@@ -44,6 +86,7 @@ section #text{
 
 section #text span:hover{
     color: #ed1c24;
+    font-size: 5vw;
 }
 
 
