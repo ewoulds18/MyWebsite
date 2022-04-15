@@ -1,29 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head class="header">
-        <title>Eric Woulds</title>
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
-    </head>
-    <body>
-        <header id="header">
-            <a href="#" class="logo">Eric</a>
-            <ul>
-                <li><a href="index" class="active">Home</a></li>
-                <li><a href="myskills">My Skills</a></li>
-            </ul>
-        </header>
-        <section>
-            <canvas id="background"></canvas>
-            <script src="javascript/background.js"></script>
-            <h2 id="text">
-                <span>Hi,</span>
-                <br>
-                <span>I'm Eric,</span>
-                <br>
-                <span>UNB CS Undergraduate</span>
-            </h2>
-            <a href="mailto:ericwoulds18@gmail.com" id="btn">Contact me!</a>
-        </section>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Eric Woulds</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Footer-Basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/Navigation-Clean.css">
+    <link rel="stylesheet" href="css/Projects-Horizontal.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">Eric</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="myskills.html">My Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photoGallery.html">My Photos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="text-center masthead">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 data-bss-hover-animate="rubberBand" class="masthead-heading mb-0">Hi, I'm Eric</h1>
+                <h2 data-bss-hover-animate="tada" class="masthead-subheading mb-0">UNB CS Undergraduate<br></h2>
+            </div>
+        </div>
+    </header>
+    <section class="projects-horizontal">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Work Experience</h2>
+            </div>
+            <section data-aos="fade-right" data-aos-once="true">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-2">
+                            <div class="p-5"><img class="img-thumbnail img-fluid" src="https://www.nbpower.com/Resources/images/logo.png"></div>
+                        </div>
+                        <div class="col-lg-6 order-lg-1">
+                            <div class="p-5">
+                                <h3 class="name">NB Power - Innovation Specialist</h3>
+                                <p class="description">- Took the lead on making different Unity projects and testing them with different VR and AR devices such as VUZIX blade glasses and HoloLens headset <br>- Researched VR and AR technologies and there use cases within the company to improve productivity<br>- Worked on main Unity Project from scratch and showed prototype of the project to internal departments <br>- Created an interactive Unity Project of a real NB Power Substation, showing models from photogrammetry and underground assets<br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section data-aos="fade-left" data-aos-once="true">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-1">
+                            <div class="p-5"><img class="img-thumbnail img-fluid" src="http://www.mphec.ca/images/logo_mphec.jpg"></div>
+                        </div>
+                        <div class="col-lg-6 order-lg-2">
+                            <div class="p-5">
+                                <h3 class="name">MPHEC - Data Analyst</h3>
+                                <p class="description">- Worked on internal databases with Microsoft Access and fixed errors with data entries before uploading to SQL Server <br>- Worked on a variety of internal projects using the tables in SQL Server<br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section data-aos="fade-right" data-aos-once="true">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-2">
+                            <div class="p-5"><img class="img-thumbnail img-fluid" src="https://www.unb.ca/webcomps/_css/unb_logo.png"></div>
+                        </div>
+                        <div class="col-lg-6 order-lg-1">
+                            <div class="p-5">
+                                <h3 class="name">UNB ITS - Student Consultant</h3>
+                                <p class="description">- Worked to troubleshoot faculty members IT issues and tracked progress through ticket system<br>- Created 2 databases in Filemaker Pro to help Dean with keeping track of Faculty members<br>- Maintained laptops and other equipment to make sure it was ready to go whenever faculty members needed them<br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section class="projects-horizontal">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Projects </h2>
+                <p class="text-center">Projects that I am currently Working on</p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><img class="img-fluid" src="images/CodeImage.png"></a></div>
+                        <div class="col">
+                            <h3 class="name">WebPage</h3>
+                            <p class="description">I am actively working on this web page when I have the time to learn and improve my understanding of web technologies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><img class="img-fluid" src="https://cdn.thewirecutter.com/wp-content/media/2020/11/vr-headset-2048px-8993-2x1-1.jpg?auto=webp&quality=100&crop=2:1&width=480&dpr=2"></a></div>
+                        <div class="col">
+                            <h3 class="name">VR Project</h3>
+                            <p class="description">This project started off a scene for a 3D modeling course, but now it's being turned into a VR Game using models made in the course and Unity for game development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="javascript/bootstrap.min.js"></script>
+    <script src="javascript/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</body>
 </html>

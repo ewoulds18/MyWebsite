@@ -63,7 +63,7 @@ body  {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   display: block;
   transition-duration: 0.3s;
 }
@@ -83,10 +83,10 @@ h3 {
 
 .resume {
   width: 960px;
-  background: #000;
+  background: #fff;
   color: #fff;
   margin: 20px auto;
-  box-shadow: 10px 10px #000;
+  box-shadow: 10px 10px #e5e5e5;
   position: relative;
   display: flex;
 }
@@ -106,11 +106,11 @@ h3 {
 .resume .base {
   width: 30%;
   padding: 30px 15px;
-  background: #000;
-  color: #fff;
+  background: #666;
+  color: #000;
 }
 .resume .base .profile {
-  background: #000;
+  background: #fff;
   padding: 30px 15px 40px 15px;
   margin: -30px -15px 45px -15px;
   position: relative;
@@ -119,7 +119,7 @@ h3 {
 .resume .base .profile::after {
   content: "";
   position: absolute;
-  background: #666;
+  background: #fff;
   width: 100%;
   height: 30px;
   bottom: -15px;
@@ -132,23 +132,23 @@ h3 {
   margin-top: 10px;
   margin-bottom: 0;
   font-size: 1.75em;
-  color: #fff;
+  color: #000;
 }
 .resume .base .contact div {
   line-height: 24px;
   color: #fff;
 }
 .resume .base .contact div a:hover {
-  color: #666;
+  color: #fff;
 }
 .resume .base .contact div a:hover span::after {
   width: 100%;
 }
 .resume .base .contact div:hover i {
-  color: #666;
+  color: #fff;
 }
 .resume .base .contact div i {
-  color: #666;
+  color: #000;
   width: 20px;
   height: 20px;
   font-size: 20px;
@@ -158,11 +158,12 @@ h3 {
 }
 .resume .base .contact div span {
   position: relative;
+  font-size: 12px;
 }
 .resume .base .contact div span::after {
   content: "";
   position: absolute;
-  background: #666;
+  background: #fff;
   height: 1px;
   width: 0;
   bottom: 0;

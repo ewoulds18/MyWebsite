@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+#header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 95%;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #666;
+    border-radius: 20px;
+}
+
+#header ul li a:hover , 
+#header ul li a.active{
+    background: #e4e011;
+    color: #666666;
+}
+
+div.gallery{
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover{
+    border: 1px solid #777;
+}
+
+div.gallery img{
+    width: 100%;
+    height: auto;
+}
+div.desc{
+    padding: 15px;
+    text-align: center;
+}
