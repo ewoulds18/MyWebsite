@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -11,28 +12,30 @@
     <link rel="stylesheet" href="css/Navigation-Clean.css">
     <link rel="stylesheet" href="css/Projects-Horizontal.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://kit.fontawesome.com/d2deb2860c.js" crossorigin="anonymous"></script>
 </head>
-
-<body>
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#">Eric</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="#"><i class="fa-solid fa-laptop-code"></i></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="myskills.html">My Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="photoGallery.html">My Photos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photoGallery.html"><i class="fa-solid fa-camera"></i> My Photos</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <br>
     <header class="text-center masthead">
-        <div class="masthead-content">
+        <div class="masthead-content" style="background:#fff">
             <div class="container">
                 <h1 data-bss-hover-animate="rubberBand" class="masthead-heading mb-0">Hi, I'm Eric</h1>
                 <h2 data-bss-hover-animate="tada" class="masthead-subheading mb-0">UNB CS Undergraduate<br></h2>
             </div>
         </div>
     </header>
+    <br>
     <section class="projects-horizontal">
         <div class="container">
             <div class="intro">
@@ -106,13 +109,63 @@
                         <div class="col-md-12 col-lg-5"><img class="img-fluid" src="https://cdn.thewirecutter.com/wp-content/media/2020/11/vr-headset-2048px-8993-2x1-1.jpg?auto=webp&quality=100&crop=2:1&width=480&dpr=2"></a></div>
                         <div class="col">
                             <h3 class="name">VR Project</h3>
-                            <p class="description">This project started off a scene for a 3D modeling course, but now it's being turned into a VR Game using models made in the course and Unity for game development</p>
+                            <p class="description">This project started off a scene for a 3D modeling course, but now it's being turned into a VR Game using models made in the course and Unity for game development <a href="https://github.com/ewoulds18/MAAC3607Project">Project GitHub Repo</a> </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="projects-horizontal">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Completed Projects</h2>
+                <p class="text-center">Projects that I've completed for course work or in my free time</p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><img class="img-fluid" src="images/Sketcher.png"></a></div>
+                        <div class="col">
+                            <h3 class="name">Sketcher</h3>
+                            <p class="description">
+                                Sketcher is a simple drawing application made using Java and JavaFX. I created Sketcher 
+                                as a final project for a course. Sketcher was heavily inspired by an older version of MS Paint.
+                                It was created following the MVC design pattern. Vist the GitHub repo to learn more!
+                                <a href="https://github.com/ewoulds18/Sketcher">Project GitHub Repo</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><img class="img-fluid" src="https://specials-images.forbesimg.com/imageserve/614d55107441e2d9ba4238f6/The-7-Biggest-Artificial-Intelligence--AI--Trends-In-2022/960x0.jpg?fit=scale"></a></div>
+                        <div class="col">
+                            <h3 class="name">AI PokerSquares Player</h3>
+                            <p class="description">
+                                This was also a course project that was created for a final project, that I completed by myself.
+                                My AI using a simple Expectimax algorithm to determine the best move given the current state of 
+                                the board.
+                                <a href="https://github.com/ewoulds18/PokerSquaresExpectimaxPlayer">Project GitHub Repo</a> 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center bg-dark mt-auto">
+        <div class="container text-white py-4 py-lg-5">
+            <ul class="list-inline">
+                <li class="list-inline-item me-4"><a class="link-light" href="https://github.com/ewoulds18">GitHub</a></li>
+                <li class="list-inline-item me-4"><a class="link-light" href="https://www.linkedin.com/in/eric-woulds-984b28208/">LinkedIn</a></li>
+                <li class="list-inline-item"><a class="link-light" href="mailto:ericwoulds18@gmail.com">Email</a></li>
+            </ul>
+        </div>
+    </footer>
+    
     <script src="javascript/bootstrap.min.js"></script>
     <script src="javascript/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
