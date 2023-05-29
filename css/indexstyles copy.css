@@ -1,0 +1,92 @@
+:root {
+    --darkpurple: #0E0B16;
+    --purple: #A239CA;
+    --bluesihpeurple: #4717F6;
+    --grey: #E7DFDD;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin-top: 30px;
+    position: relative;
+    background-color: var(--grey);
+}
+
+#WorkExperience,
+#intro,
+#Skillset,
+#Projects {
+    width: 90%;
+    height: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#WorkExperience{
+    background-color: var(--black);
+}
+
+#Skillset{
+    background-color: var(--white);
+}
+
+#Projects{
+    background-color: var(--bluesihpeurple);
+}
+
+#intro{
+    margin-top: 50px;
+}
+
+.Jobs,
+.Job,
+.Skills,
+.Skill,
+.ProjectList,
+.Project,
+.me {
+    border-radius: 10px;
+}
+
+.me {
+    width: 90%;
+    height: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.introJob:hover,
+.introMe:hover {
+    color: var(--bluesihpeurple);
+}
+
+.ProjectList,
+.Skills,
+.Jobs {
+    width: 90%;
+    height: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: var(--grey);
+}
+
+.Project,
+.Skill,
+.Job {
+    width: 90%;
+    height: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: var(--white);
+}
