@@ -39,7 +39,7 @@ body {
 
 header.header{
     text-align: center;
-    color: #FFF;
+    color: #ffffff;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -88,7 +88,7 @@ header.header .introText .introJob{
     }
 }
 
-.Jobs{
+.Jobs, .Skills, .ProjectList {
     width: 100%;
     padding-right: calc(1.5rem * .5);
     padding-left: calc(1.5rem * .5);
@@ -102,11 +102,34 @@ header.header .introText .introJob{
     flex: 0 0 auto;
     width: 100%
 }
-.Jobs .Job{
 
+.name , .description{
+    text-align: left !important;
+    margin: 0 0px 0px 0;
+    vertical-align: bottom;
 }
+
 @media(min-width: 768px) {
-    .Jobs{
+    .Jobs, .Skills, .ProjectList{
         width: 720px;
     }
+}
+
+
+article {
+    /*border: 1px solid red;*/
+    width: 100%;
+    margin: 0 10px 10px 0;
+    padding: 0 0 0 60px;
+}
+
+.Job, .Skill, .Project{
+    display: flex;
+    align-items: center;
+}
+
+.image{
+    width: 75px;
+    height: 75px;
+    margin: 10px 10px;
 }
