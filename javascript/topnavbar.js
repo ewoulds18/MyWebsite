@@ -5,7 +5,7 @@ function ShowItems() {
             x.className += " responsive";
         } else {
             x.className = "topnav";
-        }      
+        }
         console.log("Less then 600px");
     }else{
         console.log("Larger then 600px");

@@ -11,7 +11,8 @@ let clearButton;
 
 function setup() {
     frameRate(30)
-    createCanvas(1500, 1500);
+    const gameCanvas = createCanvas(600, 600);
+    gameCanvas.parent("Game");
     setupGrid();
 
     createButtons();
@@ -38,6 +39,9 @@ function resetGrid(){
     if(gameState == 0){
         setupGrid();
         document.getElementById("statusMessage").innerHTML = "Grid has been reset";
+    }else if(gameState == 1){
+        stopGame();
+        resetGrid();
     }
 }
 
@@ -74,9 +78,13 @@ function createButtons(){
     stopButton = createButton("Stop");
     clearButton = createButton("Reset Grid");
 
-    startButton.position(GRID_SIZE * CELL_SIZE + 30, 100);
-    stopButton.position(GRID_SIZE * CELL_SIZE + 30, 125);
-    clearButton.position(GRID_SIZE * CELL_SIZE + 30, 150);
+    startButton.id("Start");
+    stopButton.id("Stop");
+    clearButton.id("Clear");
+
+    //startButton.position(GRID_SIZE * CELL_SIZE + 30, 200);
+    //stopButton.position(GRID_SIZE * CELL_SIZE + 30, 225);
+    //clearButton.position(GRID_SIZE * CELL_SIZE + 30, 250);
 
     startButton.size(100, 25);
     stopButton.size(100, 25);
@@ -89,6 +97,10 @@ function createButtons(){
     startButton.mousePressed(startGame);
     stopButton.mousePressed(stopGame);
     clearButton.mousePressed(resetGrid);
+
+    startButton.parent("Buttons");
+    stopButton.parent("Buttons");
+    clearButton.parent("Buttons");
 }
 
 function draw() {
